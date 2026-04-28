@@ -1,0 +1,78 @@
+question,answer,category,keywords,times_asked,created_at
+"When does registration start?","Registration starts on September 1, 2024 for first semester and February 1, 2025 for second semester.",Registration,"registration,start,date,begin,semester",0,2024-01-01
+"What is the registration deadline?","Regular registration deadline is October 15, 2024. Late registration until October 22 with 500 ETB late fee.",Registration,"deadline,last date,registration,end",0,2024-01-01
+"What is the minimum GPA for admission?","The minimum GPA for undergraduate admission is 2.0. Competitive programs require 2.5.",Admissions,"gpa,minimum,requirement,admission",0,2024-01-01
+"What documents are needed for admission?","Required documents: Application form, transcripts, EUEE score card, birth certificate, 4 photos, 2 recommendation letters, personal statement.",Admissions,"documents,required,application",0,2024-01-01
+"Where is the admissions office?","The admissions office is located in the main administration building, on the second floor.",Admissions,"admissions,office,location,where",0,2024-01-01
+"Where is the registration building?","The registration building is located in the main administration building, on the second floor.",Registration,"registration,building,location,where",0,2024-01-01
+"How can I pay my fees?","You can pay through: 1) University portal, 2) Bank transfer to CBE account, 3) In-person at finance office, 4) CBE Birr or Amole.",Fees,"payment,fees,tuition,pay",0,2024-01-01
+"How much is tuition for Computer Science?","Computer Science tuition is 15,000 ETB per year for regular students.",Fees,"tuition,computer science,fee,cost",0,2024-01-01
+"How much is tuition for Engineering?","Engineering tuition is 16,000 ETB per year for regular students.",Fees,"tuition,engineering,fee,cost",0,2024-01-01
+"What is the late payment penalty?","Late payment penalty is 100 ETB per week, up to 1000 ETB maximum.",Fees,"late,penalty,payment",0,2024-01-01
+"How to apply for scholarship?","Submit scholarship application to registrar's office by January 30. Merit-based and need-based available.",Fees,"scholarship,financial aid,grant",0,2024-01-01
+"How much is tuition for information technology?","Information Technology tuition is 15,000 ETB per year for regular students.",Fees,"tuition,information technology,fee,cost",0,2024-01-01
+"How much is tuition for business?","Business tuition is 14,000 ETB per year for regular students.",Fees,"tuition,business,fee,cost",0,2024-01-01
+"How much is tuition for accounting?","Accounting tuition is 14,000 ETB per year for regular students.",Fees,"tuition,accounting,fee,cost",0,2024-01-01
+"How much is tuition for natural sciences?","Natural Sciences tuition is 13,000 ETB per year for regular students.",Fees,"tuition,natural sciences,fee,cost",0,2024-01-01
+"How much is tuition for social sciences?","Social Sciences tuition is 12,000 ETB per year for regular students.",Fees,"tuition,social sciences,fee,cost",0,2024-01-01
+"How much is tuition for distance learning?","Distance learning tuition is 10,000 ETB per year for regular students.",Fees,"tuition,distance learning,fee,cost",0,2024-01-01
+"How much is tuition for postgraduate programs?","Postgraduate tuition is 20,000 ETB per year for regular students.",Fees,"tuition,postgraduate,fee,cost",0,2024-01-01
+"How much is tuition for first-year students?","First-year tuition is 12,000 ETB per year for regular students.",Fees,"tuition,first-year,fee,cost",0,2024-01-01
+"How much is tuition for regular students?","Regular student tuition is 15,000 ETB per year for Computer Science, 16,000 ETB for Engineering, 14,000 ETB for Business and Accounting, 13,000 ETB for Natural Sciences, and 12,000 ETB for Social Sciences.",Fees,"tuition,regular students,fee,cost",0,2024-01-01
+"How much is tuition for postgraduate students?","Postgraduate tuition is 20,000 ETB per year for regular students.",Fees,"tuition,postgraduate,fee,cost",0,2024-01-01
+"Where is the library?","The library is located near the student cafeteria, next to the Administration Building.",Facilities,"library,location,books,study",0,2024-01-01
+"What are library hours?","Monday-Saturday: 8 AM-6 PM, Sunday: 2 PM-6 PM. Exam weeks: 24/7.",Facilities,"library,hours,open,closed",0,2024-01-01
+"Is there a medical center?","Yes, medical center is in the commercial area, open 24/7 for emergencies.",Facilities,"medical,clinic,health,hospital",0,2024-01-01
+"Where is the student cafeteria?","The student cafeteria is located in the central campus area, near the library.",Facilities,"cafeteria,food,dining,location",0,2024-01-01
+"What are cafeteria hours?","Monday-Friday: 7 AM-7 PM, Saturday-Sunday: 8 AM-5 PM.",Facilities,"cafeteria,hours,open,closed",0,2024-01-01
+"Is there a gym?","Yes, the gym is located near biology laboratory, open from 6 AM to 10 PM daily.",Facilities,"gym,fitness,exercise,sports",0,2024-01-01
+"Where is the sports field?","The sports field is located on the west side of campus, next to the women's dormitory.",Facilities,"sports field,location,athletics",0,2024-01-01
+"Where is the computer lab?","The computer lab is located in the seminar building, first floor.",Facilities,"computer lab,location,computers",0,2024-01-01
+"Where is the bookstore?","The bookstore is located in the commercial area, next to the medical center.",Facilities,"bookstore,location,textbooks,supplies",0,2024-01-01
+"Where is the student center?","The student center is located in the central campus area, near the library.",Facilities,"student center,location,activities,events",0,2024-01-01
+"Where is the parking lot?","The parking lot is located on the north side of campus, near the engineering building.",Facilities,"parking lot,location,parking",0,2024-01-01
+"Where is the science lab?","The science lab is located in the natural sciences building, second floor.",Facilities,"science lab,location,laboratory",0,2024-01-01
+"Where is the engineering workshop?","The engineering workshop is located in the engineering building, first floor.",Facilities,"engineering workshop,location,workshop",0,2024-01-01
+"Where is the art studio?","The art studio is located in the social sciences building, third floor.",Facilities,"art studio,location,studio",0,2024-01-01
+"How to apply for dormitory?","Apply online through student portal during registration. Priority to first-year and distance students.",Dormitory,"dormitory,hostel,accommodation,room,apply",0,2024-01-01
+"What are dormitory fees?","Shared room (4-person): 8,000 ETB/semester, Shared (2-person): 12,000 ETB, Single: 18,000 ETB.",Dormitory,"dorm,fee,cost,price",0,2024-01-01
+"What is the dormitory address?","Dormitory is located under student building, near the sports field.",Dormitory,"dormitory,address,location,where",0,2024-01-01
+"What are dormitory rules?","No smoking, no alcohol, no noise, quiet hours 10 PM-6 AM, guests allowed only with permission.",Dormitory,"dormitory,rules,regulations",0,2024-01-01
+"How to contact dormitory office?","Under student building, Phone: 0961806188",Dormitory,"contact,dormitory,phone,email",0,2024-01-01
+"What is the dormitory check-in time?","Check-in time is from 8 AM to 8 PM on move-in day. Early check-in available with prior approval.",Dormitory,"dormitory,check-in,time",0,2024-01-01
+"What is the dormitory check-out time?","Check-out time is by 12 PM on move-out day. Late check-out available with prior approval.",Dormitory,"dormitory,check-out,time",0,2024-01-01
+"What is the dormitory curfew?","Curfew is from 10 PM to 6 AM. Students must be in dormitory during curfew hours.",Dormitory,"dormitory,curfew,time",0,2024-01-01
+"What is the dormitory guest policy?","Guests allowed only with prior permission from dormitory office. Overnight guests not allowed.",Dormitory,"dormitory,guest,policy",0,2024-01-01
+"What is the dormitory laundry policy?","Laundry facilities available in dormitory. Free for residents. Open 24/7.",Dormitory,"dormitory,laundry,policy",0,2024-01-01
+"What courses are offered?","We offer Computer Science, Engineering, Business, Accounting, Natural Sciences, and Social Sciences etc.",Academics,"courses,programs,departments",0,2024-01-01
+"How to check exam results?","Check results through student portal using your ID and password.",Academics,"result,grades,exam,score",0,2024-01-01
+"What is the grading scale?","A(85-100)=4.0, B(70-84)=3.0, C(50-69)=2.0, D(35-49)=1.0, F(below 35)=0.0",Academics,"grading,gpa,scale",0,2024-01-01
+"What is academic probation?","Probation when GPA below 2.0. Two semesters to improve or suspension.",Academics,"probation,gpa,suspension",0,2024-01-01
+"What is the academic calendar?","First semester: Sep-Jan, Second semester: Feb-July. Summer break: August.",Academics,"calendar,semester,dates",0,2024-01-01
+"How to register for classes?","Register through registration office during registration period. Select courses and submit.",Academics,"register,classes,courses,registration",0,2024-01-01
+"What is the credit hour system?","Each course has credit hours. Full-time students must take at least 12 credit hours per semester.",Academics,"credit hours,full-time,part-time",0,2024-01-01
+"What is the course withdrawal policy?","Withdraw by week 8 without penalty. After week 8, withdrawal requires approval and may incur fees.",Academics,"course withdrawal,drop course,policy",0,2024-01-01
+"What is the academic advising process?","Academic advising available through student services. Schedule appointment for guidance on course selection and career planning.",Academics,"advising,academic advisor,appointment",0,2024-01-01
+"What is the graduation requirement?","To graduate, students must complete required credit hours, maintain minimum GPA, and submit graduation application in final semester.",Academics,"graduation,requirements,credit hours,gpa",0,2024-01-01
+"What is the thesis requirement for postgraduate students?","Postgraduate students must complete a thesis project under faculty supervision, including proposal, research, and defense.",Academics,"thesis,postgraduate,requirement",0,2024-01-01
+"What is the internship requirement?","Some programs require an internship for graduation. Check with your department for specific requirements.",Academics,"internship,requirement,graduation",0,2024-01-01
+"What is the policy on academic integrity?","Academic integrity is expected. Violations include plagiarism, cheating, and fabrication. Penalties range from warning to expulsion.",Academics,"academic integrity,plagiarism,cheating,policy",0,2024-01-01
+"What is the policy on course attendance?","Attendance is expected for all courses. Some instructors may have specific attendance policies. Check with your instructor.",Academics,"attendance,policy,course",0,2024-01-01
+"What is the policy on course retakes?","Students may retake a course if they receive a failing grade. Retake policies vary by department. Check with your academic advisor.",Academics,"course retake,policy,retake",0,2024-01-01
+"What is the policy on academic appeals?","Students may appeal academic decisions through the academic appeals process. Submit appeal form to registrar's office with supporting documentation.",Academics,"academic appeals,policy,appeal",0,2024-01-01
+"What is the policy on academic leave?","Students may request academic leave for personal, medical, or other reasons. Submit leave request form to registrar's office with supporting documentation.",Academics,"academic leave,policy,leave",0,2024-01-01
+"What is the policy on academic dismissal?","Students may be dismissed for academic reasons if they fail to meet minimum GPA requirements after probation period. Dismissal decisions can be appealed.",Academics,"academic dismissal,policy,dismissal",0,2024-01-01
+"What is the policy on academic honors?","Students with high academic achievement may be eligible for honors such as Dean's List or graduation with honors. Check with your department for specific criteria.",Academics,"academic honors,policy,honors",0,2024-01-01
+"How to get student ID card?","ID cards issued at registrar's office after registration. Fee: 100 ETB.",Services,"id card,student id,identification",0,2024-01-01
+"How to contact registrar?","Email: registrar@mekdela.edu.et, Phone: 033-123-4567",Services,"contact,registrar,phone,email",0,2024-01-01
+"How to withdraw from a course?","Course withdrawal deadline is week 8. Submit form to registrar's office.",Registration,"withdrawal,drop course",0,2024-01-01
+"How to apply for leave of absence?","Submit leave of absence form to registrar's office with supporting documentation.",Services,"leave of absence,academic leave,policy",0,2024-01-01
+"How to request transcript?","Request transcripts through student portal. Fee: 200 ETB for regular processing, 500 ETB for expedited.",Services,"transcript,request,fee",0,2024-01-01
+"How to access counseling services?","Counseling services available through student services. Schedule appointment for support with personal, academic, or career issues.",Services,"counseling,services,appointment",0,2024-01-01
+"How to access career services?","Career services available through student services. Schedule appointment for resume review, job search assistance, and career counseling.",Services,"career services,appointment,resume,job search",0,2024-01-01
+"How to access disability services?","Disability services available through student services. Contact office for accommodations and support.",Services,"disability services,accommodations,support",0,2024-01-01
+"How to access financial aid?","Financial aid available through registrar's office. Submit application with required documentation by January 30.",Services,"financial aid,scholarship,application",0,2024-01-01
+"How to access tutoring services?","Tutoring services available through student services. Schedule appointment for academic support in various subjects.",Services,"tutoring,services,appointment,academic support",0,2024-01-01
+"How to access library resources?","Library resources available to all students. Access online databases and physical materials during library hours.",Services,"library resources,access,databases,materials",0,2024-01-01
+"How to access health services?","Health services available at medical center. Open 24/7 for emergencies and regular hours for non-emergency care.",Services,"health services,medical center,access",0,2024-01-01
+"How to access IT support?","IT support available through computer lab. Contact lab staff for assistance with technical issues.",Services,"IT support,computer lab,technical assistance",0,2024-01-01
