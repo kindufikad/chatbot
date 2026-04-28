@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mekdela Amba University - FAQ Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Main Container - Sidebar + Chat */
+        .app-container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* LEFT SIDEBAR - Popular Questions */
+        .sidebar {
+            width: 320px;
+            background: white;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            z-index: 10;
+        }
+
+        /* Sidebar Header */
+        .sidebar-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .sidebar-header h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* University Logo Icon - For Image */
+        .university-logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: white;
+            padding: 3px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* For MAU text fallback */
+        .university-logo-text {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #667eea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-header p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .university-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fafafa;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        .feature-text h4 {
+            font-size: 13px;
+            margin-bottom: 3px;
+            color: #333;
+        }
+
+        .feature-text p {
+            font-size: 10px;
+            color: #666;
+        }
+
+        /* Popular Questions List */
+        .popular-list {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .popular-list h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .popular-item {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            border-left: 3px solid transparent;
+        }
+
+        .popular-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: #ffc107;
+        }
+
+        .popular-item::before {
+            content: "❓";
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            background: #fafafa;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .stat-label {
+            color: #666;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* RIGHT CHAT AREA */
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Chat Header */
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+        }
+
+        .chat-header h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .chat-header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Messages Area */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f7f9fc;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 75%;
+            padding: 12px 18px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .confidence {
+            font-size: 10px;
+            margin-top: 5px;
+            opacity: 0.6;
+        }
+
+        .message-time {
+            font-size: 10px;
+            margin-top: 5px;
+            opacity: 0.6;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: none;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 20px;
+            width: fit-content;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #999;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+            30% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        /* Input Area */
+        .chat-input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 280px;
+            }
+            
+            .chat-area {
+                margin: 10px;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+            
+            .popular-item {
+                font-size: 11px;
+                padding: 10px 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                display: none;
+            }
+            
+            .chat-area {
+                margin: 10px;
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- LEFT SIDEBAR - Popular Questions -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>
+                    <!-- University Logo Image -->
+                    <img src="{{ url_for('static', filename='Mekdela_Amba_University_logo.jpg') }}" 
+                         alt="Mekdela Amba University Logo" 
+                         class="university-logo-icon"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'university-logo-text\'>MAU</span>' + this.parentElement.innerHTML;">
+                    Mekdela Amba University
+                </h2>
+                <p>FAQ Chatbot</p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h4>Instant Replies</h4>
+                        <p>Get quick answers to common questions</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🕐</div>
+                    <div class="feature-text">
+                        <h4>24/7 Support</h4>
+                        <p>Always here to help you</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <div class="feature-text">
+                        <h4>Reliable Info</h4>
+                        <p>Accurate university information</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popular-list">
+                <h3>📌 Popular Questions</h3>
+                <div class="popular-item" onclick="sendPresetMessage('When does registration start?')">
+                    When does registration start?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('What is the registration deadline?')">
+                    What is the registration deadline?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('Where is the library?')">
+                    Where is the library?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('How can I pay my fees?')">
+                    How can I pay my fees?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('How to apply for dormitory?')">
+                    How to apply for dormitory?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('How to check exam results?')">
+                    How to check exam results?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('What is the minimum GPA for admission?')">
+                    What is the minimum GPA?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('How much is tuition for Computer Science?')">
+                    Computer Science tuition fee?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('What are library hours?')">
+                    What are library hours?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('Is there a medical center?')">
+                    Is there a medical center?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('What is the grading scale?')">
+                    What is the grading scale?
+                </div>
+                <div class="popular-item" onclick="sendPresetMessage('How to get student ID card?')">
+                    How to get student ID card?
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-item">
+                    <span class="stat-label">📚 Total FAQs</span>
+                    <span class="stat-value" id="totalFaqs">45+</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">🎯 Confidence Score</span>
+                    <span class="stat-value" id="confidenceScore">--%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">💬 Chats Today</span>
+                    <span class="stat-value" id="chatsToday">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT CHAT AREA -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <h1>💬 University FAQ Chatbot</h1>
+                <p>Ask me anything about admissions, fees, courses, and campus life</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! 👋 Welcome to Mekdela Amba University Chatbot.<br><br>
+                        What can I help you with?
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span><span></span><span></span>
+                <span style="margin-left: 8px;">Bot is thinking...</span>
+            </div>
+
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" 
+                       placeholder="Type your question here..." 
+                       autocomplete="off">
+                <button class="send-btn" onclick="sendMessage()">Send 📤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Track last confidence for stats
+        let lastConfidence = 0;
+        
+        // Send message function
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addMessage(message, 'user');
+            input.value = '';
+            
+            document.getElementById('typingIndicator').style.display = 'block';
+            scrollToBottom();
+            
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message })
+                });
+                
+                const data = await response.json();
+                
+                document.getElementById('typingIndicator').style.display = 'none';
+                addMessage(data.response, 'bot', data.confidence);
+                
+                // Update stats
+                if (data.confidence) {
+                    lastConfidence = data.confidence;
+                    updateStats();
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('typingIndicator').style.display = 'none';
+                addMessage('Sorry, I encountered an error. Please try again.', 'bot');
+            }
+        }
+        
+        // Add message to chat
+        function addMessage(text, sender, confidence = null) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            let confidenceHtml = '';
+            if (confidence !== null && sender === 'bot') {
+                const emoji = confidence > 70 ? '🎯' : (confidence > 40 ? '🤔' : '📖');
+                confidenceHtml = `<div class="confidence">${emoji} Confidence: ${confidence}%</div>`;
+            }
+            
+            messageDiv.innerHTML = `
+                <div class="message-content">
+                    ${text}
+                    ${confidenceHtml}
+                    <div class="message-time">${time}</div>
+                </div>
+            `;
+            
+            messagesDiv.appendChild(messageDiv);
+            scrollToBottom();
+        }
+        
+        // Send preset message
+        function sendPresetMessage(message) {
+            document.getElementById('chatInput').value = message;
+            sendMessage();
+        }
+        
+        // Handle Enter key
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Scroll to bottom
+        function scrollToBottom() {
+            const messagesDiv = document.getElementById('chatMessages');
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        // Update sidebar stats
+        function updateStats() {
+            const confidenceElem = document.getElementById('confidenceScore');
+            if (confidenceElem && lastConfidence) {
+                confidenceElem.textContent = lastConfidence + '%';
+            }
+            
+            // Update chats today count
+            const chatsElem = document.getElementById('chatsToday');
+            if (chatsElem) {
+                const messages = document.querySelectorAll('.message');
+                const chatCount = Math.floor(messages.length / 2);
+                chatsElem.textContent = chatCount;
+            }
+        }
+        
+        // Initialize stats
+        function initStats() {
+            const totalFaqsElem = document.getElementById('totalFaqs');
+            if (totalFaqsElem) {
+                // Get total FAQs from database
+                fetch('/get-faqs-count')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data && data.count) {
+                            totalFaqsElem.textContent = data.count;
+                        }
+                    })
+                    .catch(() => {
+                        totalFaqsElem.textContent = '45+';
+                    });
+            }
+        }
+        
+        // Call init on load
+        initStats();
+    </script>
+</body>
+</html>
