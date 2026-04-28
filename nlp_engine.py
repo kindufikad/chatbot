@@ -7,12 +7,25 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import random
+import ssl
+import os
+
+# Fix SSL for NLTK downloads
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
 
 # Download NLTK data
-nltk.download('punkt', quiet=True)
-nltk.download('wordnet', quiet=True)
-nltk.download('stopwords', quiet=True)
-nltk.download('punkt_tab', quiet=True)
+try:
+    nltk.download('punkt', quiet=True)
+    nltk.download('wordnet', quiet=True)
+    nltk.download('stopwords', quiet=True)
+    nltk.download('punkt_tab', quiet=True)
+except:
+    pass
 
 class NLPEngine:
     def __init__(self):
@@ -20,6 +33,8 @@ class NLPEngine:
         self.stop_words = set(stopwords.words('english'))
         self.synonyms = self.load_synonyms()
         self.faq_data = []
+        self.vectorizer = None
+        self.question_vectors = None
     
     def load_synonyms(self):
         return {
@@ -182,11 +197,13 @@ What would you like to know? Just type your question!""",
     
     def train_with_faqs(self, faq_data):
         self.faq_data = faq_data
+        if not faq_data:
+            return
         questions = [f['question'] for f in faq_data]
         processed = [self.preprocess_text(q) for q in questions]
         if processed:
             self.vectorizer = TfidfVectorizer()
             self.question_vectors = self.vectorizer.fit_transform(processed)
 
-# Create singleton instance
+# Create singleton instance - THIS LINE IS CRITICAL
 nlp_engine = NLPEngine()
